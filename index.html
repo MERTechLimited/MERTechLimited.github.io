@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -96,12 +97,39 @@
             margin-left: -1em;
         }
 
-        /* Contact & Footer */
+        /* Contact & Form Styling */
         .contact-box {
             background-color: var(--deep-ocean);
             color: white;
             padding: 60px;
             border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 0;
+            padding: 12px;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--hi-viz-orange);
+            color: white;
+            box-shadow: none;
+        }
+
+        .form-label {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+            text-align: left;
         }
 
         footer {
@@ -114,11 +142,12 @@
         .btn-custom {
             background-color: var(--hi-viz-orange);
             color: white;
-            padding: 12px 30px;
+            padding: 12px 40px;
             font-weight: 700;
             text-transform: uppercase;
             border: none;
             border-radius: 0;
+            transition: background 0.3s ease;
         }
 
         .btn-custom:hover {
@@ -150,7 +179,7 @@
                         <h3>Dive Technician Services</h3>
                         <p>Specializing in the maintenance and compliance of professional diving systems.</p>
                         <ul class="service-list ms-3">
-                            <li><strong>Kirby Morgan Certified Technician</strong></li>
+                            <li>Kirby Morgan Certified Technician</li>
                             <li>Surface Supplied Air & Nitrox Systems</li>
                             <li>Diagnostic, repair, and certification support</li>
                             <li>System mobilization and deck spread maintenance</li>
@@ -179,14 +208,28 @@
 
     <section id="contact" class="section-padding">
         <div class="container">
-            <div class="contact-box text-center">
-                <h2 class="mb-4">Global Deployment Availability</h2>
-                <p class="lead mb-4">MERTech Limited is available for worldwide projects.</p>
-                <hr style="background-color: var(--hi-viz-orange); height: 2px; width: 100px; margin: 20px auto; opacity: 1;">
-                <p class="h4 mt-4">
-                    <a href="mailto:info@mertechlimited.com" class="text-white text-decoration-none">info@mertechlimited.com</a>
-                </p>
-                <p class="text-muted mt-2">United Kingdom Based | Global Operations</p>
+            <div class="contact-box">
+                <div class="text-center mb-5">
+                    <h2 class="mb-3">Global Deployment Availability</h2>
+                    <p class="lead">Submit an inquiry for worldwide project support.</p>
+                    <hr style="background-color: var(--hi-viz-orange); height: 2px; width: 60px; margin: 20px auto; opacity: 1;">
+                </div>
+
+                <form action="https://formspree.io/f/xqedjoor" method="POST" class="row g-4">
+                    <div class="col-md-12">
+                        <label class="form-label">Your Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="name@company.com" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Your Message</label>
+                        <textarea name="message" class="form-control" rows="5" placeholder="Details regarding mobilization, location, and equipment requirements..." required></textarea>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-custom mt-3">Send Inquiry</button>
+                    </div>
+                </form>
+
+                <p class="text-muted mt-5 text-center small">United Kingdom Based | Global Operations</p>
             </div>
         </div>
     </section>
@@ -194,7 +237,7 @@
     <footer class="text-center">
         <div class="container">
             <p class="mb-0">&copy; 2026 MERTech Limited. All rights reserved.</p>
-            <p><small>Dive Technician | Kirby Morgan Certified | ROV Support</small></p>
+            <p><small>Dive Technician | ROV Support</small></p>
         </div>
     </footer>
 
